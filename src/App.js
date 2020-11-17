@@ -1,10 +1,12 @@
 import React from "react";
-import { StyleSheet, Image, TouchableOpacity } from "react-native";
+import {StyleSheet, Image, TouchableOpacity} from "react-native";
 
 import FuramaView from "./components/common/FuramaView";
 import FuramaText from "./components/common/FuramaText";
 import FuramaFlatList from "./components/common/FuramaFlatList";
 import FuramaImage from "./components/common/FuramaImage";
+import Dimens from "./common/Dimens";
+import HomeNewsComponent from "./components/home/HomeNewsComponent";
 
 const App = () => {
   const DATA = [
@@ -37,22 +39,8 @@ const App = () => {
       icon: require("./img/Rate.png"),
     },
   ];
-  const DATA_2 = [
-    {
-      title: "Thưởng thức khung cảnh ngoạn mục của Thành phố Đà Nẵng từ hình ảnh",
-      image: require("./img/News1.png"),
-    },
-    {
-      title: "Thưởng thức khung cảnh ngoạn mục của Thành phố Đà Nẵng từhình ảnh",
-      image: require("./img/News2.png"),
-    },
-    {
-      title: "Thưởng thức khung cảnh ngoạn mục của Thành phố Đà Nẵng từhình ảnh",
-      image: require("./img/News3.png"),
-    },
-  ];
 
-  const Item1 = ({ title, icon }) => {
+  const Item1 = ({title, icon}) => {
     return (
       <TouchableOpacity
         style={{
@@ -98,63 +86,10 @@ const App = () => {
     );
   };
 
-  const Item2 = ({ title, image }) => {
-    return (
-      <TouchableOpacity
-        style={{
-          marginLeft: 17,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <TouchableOpacity
-          style={{
-            width: 250,
-            borderRadius: 12,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            style={{
-              borderRadius: 7,
-              height: 120,
-              resizeMode: "contain",
-            }}
-            source={image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            marginTop: 7,
-            width: 180,
-            justifyContent: "flex-end",
-            alignItems: "center",
-          }}
-        >
-          <FuramaText
-            style={{
-              fontSize: 12,
-            }}
-            numberOfLines={2}
-            text={title}
-          />
-        </TouchableOpacity>
-      </TouchableOpacity>
-    );
-  };
-
-  const renderItem1 = ({ item }) => (
-    <Item1 
-    title={item.title} 
-    icon={item.icon} 
-    />
-  );
-
-  const renderItem2 = ({ item }) => (
-    <Item2 
-    title={item.title} 
-    image={item.image} 
+  const renderItem1 = ({item}) => (
+    <Item1
+      title={item.title}
+      icon={item.icon}
     />
   );
 
@@ -267,7 +202,7 @@ const App = () => {
 
       <FuramaFlatList
         style={{
-          height: 250,
+          height: Dimens.verticalScale(250),
           flexDirection: "row",
         }}
         horizontal={true}
@@ -275,33 +210,11 @@ const App = () => {
         data={DATA}
         renderItem={renderItem1}
       />
+      <HomeNewsComponent/>
 
-      <FuramaText
-        style={{
-          fontWeight: "bold",
-          fontSize: 18,
-          lineHeight: 25,
-          marginLeft: 20,
-        }}
-        text={"Tin tức"}
-      />
-
-      <FuramaFlatList
-        style={{
-          height: 200,
-          flexDirection: "row",
-        }}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        data={DATA_2}
-        renderItem={renderItem2}
-      />
     </FuramaView>
   );
 };
-
-const styles = StyleSheet.create({
-  
-});
+const styles = StyleSheet.create({});
 
 export default App;
