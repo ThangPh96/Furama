@@ -17,7 +17,7 @@ const App = () => {
       }}
     >
       <FuramaText
-        text={'Xin chao mn'}
+        text={'ahihi'}
       />
     </FuramaView>
   );
