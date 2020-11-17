@@ -4,26 +4,27 @@ import ItemType from "./ItemType";
 import {ImageBackground} from "react-native";
 import FuramaText from "../common/FuramaText";
 import FuramaImage from "../common/FuramaImage";
+import Dimens from "../../common/Dimens";
 
 
 const HomeHeader = () => {
-    return (
-        <FuramaView
-            style={{
-                flex: 1,
-            }}
-        >
-            <FuramaView>
-               <FuramaText text={"Hello Guys"}/>
-                <FuramaText text={'Hello verybody'}/>
-            </FuramaView>
-            <FuramaView>
-                <FuramaImage
-                localSource={}/>
-            </FuramaView>
-        </FuramaView>
-    );
+  return (
+    <FuramaView
+      style={{
+        height: Dimens.verticalScale(80),
+        backgroundColor: 'red'
+      }}
+    >
+      <FuramaView>
+        <FuramaText text={"Hello Guys"}/>
+        <FuramaText text={'Hello verybody'}/>
+      </FuramaView>
+      <FuramaView>
+        {/*<FuramaImage*/}
+        {/*localSource={Ima}/>*/}
+      </FuramaView>
+    </FuramaView>
+  );
 };
-
 
 export default HomeHeader;

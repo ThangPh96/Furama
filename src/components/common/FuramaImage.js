@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import FastImage from "react-native-fast-image";
 
 FuramaImage.propTypes = {
-    style: PropTypes.propTypes([
+    style: PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object
     ]),

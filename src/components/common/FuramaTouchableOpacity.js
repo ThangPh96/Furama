@@ -4,7 +4,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const VamprTouchableOpacity = (props) => {
+const FuramaTouchableOpacity = (props) => {
   const {
     style,
     onPress
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
   view: {}
 });
 
-export default VamprTouchableOpacity;
+export default FuramaTouchableOpacity;

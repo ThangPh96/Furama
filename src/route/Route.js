@@ -1,21 +1,30 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from "../components/home/HomeScreen";
-import {TouchableOpacity,View,Text,Image} from "react-native";
+import HomeContainer from "../containers/HomeContainer";
+import {NAVIGATION_CONSTANTS} from "../common/Constants";
+import FoodContainer from "../containers/FoodContainer";
 
 const Stack = createStackNavigator();
 export default function Route() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen  name='Home' component={HomeScreen}
-                              options={{
-                                  headerShown: false,
-                              }}
-                />
-
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name={NAVIGATION_CONSTANTS.HOME}
+          component={HomeContainer}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name={NAVIGATION_CONSTANTS.DETAIL}
+          component={FoodContainer}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }

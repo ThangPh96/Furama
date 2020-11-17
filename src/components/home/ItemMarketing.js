@@ -5,8 +5,7 @@ import FontSizes from "../../common/FontSizes";
 import Dimens from "../../common/Dimens";
 import FuramaText from "../common/FuramaText";
 
-
-export default () => {
+const ItemMarketing = () => {
     return (
         <FuramaFlatList
 
@@ -68,3 +67,5 @@ const dataMarketing = [
         content: 'Thưởng thức khung cảnh ngoạn ngục của thành phố Đà Lạt'
     }
 ]
+
+export default ItemMarketing;
