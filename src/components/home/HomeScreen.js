@@ -16,8 +16,10 @@ const HomeScreen = () => {
             <ItemType/>
             <ImageBackground source={require('../../assets/images/im_background/im_background.png')}
                              resizeMode={'cover'}
-                             style={{flex: 1, justifyContent: "center"}}/>
+                             style={{flex: 1, justifyContent: "center",}}/>
+
             <ItemMarketing/>
+
 
         </FuramaView>
     );
