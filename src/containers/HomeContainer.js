@@ -8,11 +8,9 @@ const HomeContainer = (props) => {
   const {
     navigation
   } = props;
-
   return (
     <FuramaContainer
       style={{}}
-      hasHeader={false}
       renderContentView={() => {
         return (
           <>

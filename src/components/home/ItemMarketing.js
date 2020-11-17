@@ -8,7 +8,6 @@ import FuramaText from "../common/FuramaText";
 const ItemMarketing = () => {
     return (
         <FuramaFlatList
-
             horizontal={true}
             data={dataMarketing}
             keyExtractor={item => item.id}
