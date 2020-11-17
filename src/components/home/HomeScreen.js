@@ -2,6 +2,7 @@ import React from 'react';
 import FuramaView from "../common/FuramaView";
 import ItemType from "./ItemType";
 import {ImageBackground} from "react-native";
+import ItemMarketing from "./ItemMarketing";
 
 
 const HomeScreen = () => {
@@ -16,7 +17,7 @@ const HomeScreen = () => {
             <ImageBackground source={require('../../assets/images/im_background/im_background.png')}
                              resizeMode={'cover'}
                              style={{flex: 1, justifyContent: "center"}}/>
-
+            <ItemMarketing/>
 
         </FuramaView>
     );
