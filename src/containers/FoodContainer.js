@@ -4,6 +4,7 @@ import TypeServiceList from "../components/home/TypeServiceList";
 import TypeNewsList from "../components/home/TypeNewsList";
 import Images from "../common/Images";
 import FuramaText from "../components/common/FuramaText";
+import TypeMenuList from "../components/home/TypeMenuList";
 
 const FoodContainer = () => {
   return (
@@ -12,7 +13,7 @@ const FoodContainer = () => {
       renderContentView={() => {
         return (
           <>
-
+            <TypeMenuList/>
           </>
         )
       }}

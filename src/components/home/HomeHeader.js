@@ -12,7 +12,6 @@ const HomeHeader = () => {
     return (
         <FuramaView
             style={{
-
                 height: Dimens.verticalScale(80),
                 flexDirection: 'row'
             }}

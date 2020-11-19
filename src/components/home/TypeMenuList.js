@@ -1,6 +1,8 @@
 import React, {} from 'react'
-import {} from 'react-native'
+import {Text, StyleSheet} from 'react-native'
 import FuramaFlatList from "../common/FuramaFlatList";
+import FuramaView from "../common/FuramaView";
+import FuramaText from "../common/FuramaText";
 
 const data = [
     {
@@ -33,12 +35,31 @@ const data = [
     },
 ]
 
+
 function TypeMenuList() {
     return (
         <>
             <FuramaFlatList
-
+                horizontal={true}
+                keyExtractor={item => item.id}
+                data={data}
+                renderItem={({item}) =>
+                    <FuramaView  style={styles.container}>
+                        <Text style={{color:'white'}}>
+                            {item.name}
+                        </Text>
+                    </FuramaView>
+                }
             />
         </>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        margin : 5,
+        borderRadius:20,
+        
+    },
+})
+export default TypeMenuList
