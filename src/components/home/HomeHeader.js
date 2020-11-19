@@ -25,7 +25,8 @@ const HomeHeader = () => {
                             style={[styles.txtView, {marginVertical: 5}]}/>
             </FuramaView>
             <FuramaView style={styles.imView}>
-                <FuramaImage localSource={Images.im_notification}
+                <FuramaImage
+                    localSource={Images.im_time_picker}
                              style={{width: Dimens.widthScreen / 15, height: Dimens.widthScreen / 15}}/>
                 <FuramaImage localSource={Images.im_notification}
                              style={{width: Dimens.widthScreen / 15, height: Dimens.widthScreen / 15}}/>

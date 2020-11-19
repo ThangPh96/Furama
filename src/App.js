@@ -1,7 +1,7 @@
 import React from 'react';
 import FuramaView from "./components/common/FuramaView";
 import FuramaText from "./components/common/FuramaText";
-import ItemType from "./components/home/ItemType";
+import TypeServiceList from "./components/home/TypeServiceList";
 import Route from "./route/Route";
 
 

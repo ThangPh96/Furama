@@ -4,8 +4,9 @@ import FuramaFlatList from "../common/FuramaFlatList";
 import FontSizes from "../../common/FontSizes";
 import Dimens from "../../common/Dimens";
 import FuramaText from "../common/FuramaText";
+import Images from "../../common/Images";
 
-const ItemMarketing = () => {
+const TypeNewsList = () => {
     return (
         <FuramaFlatList
             horizontal={true}
@@ -52,19 +53,19 @@ const styles = StyleSheet.create({
 const dataMarketing = [
     {
         id: 1,
-        image: require('../../assets/images/im_welcome/im_welcome.png'),
+        image:Images.im_welcome,
         content: 'Thưởng thức khung cảnh ngoạn ngục của thành phố Đà Lạt'
     },
     {
         id: 2,
-        image: require('../../assets/images/im_booking_table/im_booking_table.png'),
+        image: Images.im_booking_table,
         content: 'Thưởng thức khung cảnh ngoạn ngục của thành phố Đà Lạt'
     },
     {
         id: 3,
-        image: require('../../assets/images/im_clean_room/im_clean_room.png'),
+        image:Images.im_clean_room,
         content: 'Thưởng thức khung cảnh ngoạn ngục của thành phố Đà Lạt'
     }
 ]
 
-export default ItemMarketing;
+export default TypeNewsList;

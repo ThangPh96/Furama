@@ -1,7 +1,7 @@
 import React from 'react';
 import FuramaContainer from "../components/common/FuramaContainer";
-import ItemType from "../components/home/ItemType";
-import ItemMarketing from "../components/home/ItemMarketing";
+import TypeServiceList from "../components/home/TypeServiceList";
+import TypeNewsList from "../components/home/TypeNewsList";
 import Images from "../common/Images";
 
 const FoodContainer = () => {
