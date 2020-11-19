@@ -3,6 +3,7 @@ import FuramaContainer from "../components/common/FuramaContainer";
 import TypeServiceList from "../components/home/TypeServiceList";
 import TypeNewsList from "../components/home/TypeNewsList";
 import Images from "../common/Images";
+import FuramaText from "../components/common/FuramaText";
 
 const FoodContainer = () => {
   return (

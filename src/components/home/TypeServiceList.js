@@ -48,7 +48,7 @@ const TypeServiceList = (props) => {
             renderItem={({item}) =>
                 <FuramaTouchableOpacity
                     style={styles.itemType}
-                    onPress={() => console.log(item)}
+                    onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL)}
                 >
                     <View style={{alignItems: 'center'}}>
                         <Image
