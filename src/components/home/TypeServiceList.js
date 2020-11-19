@@ -11,28 +11,58 @@ const DataItemType = [
     {
         id: 1,
         title: 'Đồ ăn và thức uống',
-        image: Images.im_serving_dish
+        image: Images.im_serving_dish,
+        onPress: (item, navigation) => {
+            navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL, {
+                text: item.title,
+                image: item.image
+            })
+        }
     },
 
     {
         id: 2,
         title: 'Sức khỏe và Làm đẹp',
-        image: Images.im_spa
+        image: Images.im_spa,
+        onPress: (item, navigation) => {
+            navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL, {
+                text: item.title,
+                image: item.image
+            })
+        }
     },
     {
         id: 3,
         title: 'Giặt ủi',
-        image: Images.im_clothes
+        image: Images.im_clothes,
+        onPress: (item, navigation) => {
+            navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL, {
+                text: item.title,
+                image: item.image
+            })
+        }
     },
     {
         id: 4,
         title: 'Mini bar',
-        image: Images.im_drink
+        image: Images.im_drink,
+        onPress: (item, navigation) => {
+            navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL, {
+                text: item.title,
+                image: item.image
+            })
+        }
     },
     {
         id: 5,
         title: 'Đặt bàn',
-        image: Images.im_dinner
+        image: Images.im_dinner,
+        onPress: (item, navigation) => {
+            navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL, {
+                text: item.title,
+                image: item.image
+            })
+        }
     },
 ]
 
@@ -48,7 +78,7 @@ const TypeServiceList = (props) => {
             renderItem={({item}) =>
                 <FuramaTouchableOpacity
                     style={styles.itemType}
-                    onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL)}
+                    onPress={() => item.onPress(item, navigation)}
                 >
                     <View style={{alignItems: 'center'}}>
                         <Image

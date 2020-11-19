@@ -8,7 +8,7 @@ import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity"
 import {NAVIGATION_CONSTANTS} from "../common/Constants";
 import FuramaImage from "../components/common/FuramaImage";
 
-const FoodContainer = (props) => {
+const FoodContainer3 = (props) => {
   const {
     navigation,
     route
@@ -27,7 +27,8 @@ const FoodContainer = (props) => {
                 backgroundColor: 'red'
               }}
               onPress={() => {
-                navigation.navigate(NAVIGATION_CONSTANTS.LOGIN)
+                // navigation.push(NAVIGATION_CONSTANTS.HOME)
+                navigation.popToTop();
               }}
             />
             <FuramaText
@@ -51,4 +52,4 @@ const FoodContainer = (props) => {
 };
 
 
-export default FoodContainer;
+export default FoodContainer3;

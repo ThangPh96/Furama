@@ -8,7 +8,7 @@ import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity"
 import {NAVIGATION_CONSTANTS} from "../common/Constants";
 import FuramaImage from "../components/common/FuramaImage";
 
-const FoodContainer = (props) => {
+const LoginContainer = (props) => {
   const {
     navigation,
     route
@@ -24,17 +24,18 @@ const FoodContainer = (props) => {
               style={{
                 width: 300,
                 height: 50,
-                backgroundColor: 'red'
+                backgroundColor: 'blue'
               }}
               onPress={() => {
-                navigation.navigate(NAVIGATION_CONSTANTS.LOGIN)
+                // navigation.navigate(NAVIGATION_CONSTANTS.HOME)
+                setIsLogin(true)
               }}
             />
             <FuramaText
               style={{
                 color: 'white'
               }}
-              text={route?.params?.text}
+              text={'LOGIN'}
             />
             <FuramaImage
               style={{
@@ -51,4 +52,4 @@ const FoodContainer = (props) => {
 };
 
 
-export default FoodContainer;
+export default LoginContainer;
