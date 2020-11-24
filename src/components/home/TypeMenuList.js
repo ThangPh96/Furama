@@ -7,7 +7,7 @@ import FuramaText from "../common/FuramaText";
 const data = [
     {
         id: 1,
-        name: 'Appetizers'
+        name: 'Appetizers',
     },
     {
         id: 2,
@@ -44,10 +44,10 @@ function TypeMenuList() {
                 keyExtractor={item => item.id}
                 data={data}
                 renderItem={({item}) =>
-                    <FuramaView  style={styles.container}>
-                        <Text style={{color:'white'}}>
-                            {item.name}
-                        </Text>
+                    <FuramaView style={styles.container}>
+                        <FuramaText style={{color: 'white'}}
+                                    text={item.name}
+                        />
                     </FuramaView>
                 }
             />
@@ -56,10 +56,10 @@ function TypeMenuList() {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        margin : 5,
-        borderRadius:20,
-        
+    container: {
+        margin: 15,
+        borderRadius: 20,
+
     },
 })
 export default TypeMenuList
