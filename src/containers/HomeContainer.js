@@ -5,27 +5,27 @@ import TypeNewsList from "../components/home/TypeNewsList";
 import Images from "../common/Images";
 import {ScrollView} from 'react-native'
 import FuramaView from "../components/common/FuramaView";
+import Dimens from "../common/Dimens";
 
 const HomeContainer = (props) => {
-  const { navigation } = props;
+  const {navigation} = props;
+
+
+
   return (
     <FuramaContainer
       style={{}}
       renderContentView={() => {
         return (
           <>
-            <FuramaView
+            <TypeServiceList
               style={{
-                justifyContent: "center",
-                alignItems: "center",
-                flex: 1,
+                marginBottom: Dimens.verticalScale(20),
+                marginTop: Dimens.verticalScale(8)
               }}
-            >
-              <TypeServiceList navigation={navigation} />
-            </FuramaView>
-            <FuramaView style={{ flex: 1 }}>
-              <TypeNewsList />
-            </FuramaView>
+              navigation={navigation}
+            />
+            <TypeNewsList/>
           </>
         );
       }}

@@ -1,15 +1,14 @@
 import React from 'react';
 import {
   StyleSheet,
-  Image,
 } from 'react-native';
 import PropTypes from "prop-types";
-import FastImage from "react-native-fast-image";
 import FuramaView from "./FuramaView";
 import FuramaImage from "./FuramaImage";
 import Images from "../../common/Images";
 import Dimens from "../../common/Dimens";
-import HomeHeader from "../home/HomeHeader";
+import {ifIphoneX} from "react-native-iphone-x-helper";
+import FuramaHeader from "./FuramaHeader";
 
 FuramaContainer.propTypes = {
   style: PropTypes.oneOfType([
@@ -18,7 +17,8 @@ FuramaContainer.propTypes = {
   ]),
   hasBackgroundImage: PropTypes.bool,
   backgroundImage: PropTypes.number || PropTypes.string,
-  hasHeader: PropTypes.bool
+  hasHeader: PropTypes.bool,
+  headerMode: PropTypes.string
 }
 
 FuramaContainer.defaultProps = {
@@ -33,10 +33,14 @@ function FuramaContainer(props) {
     hasBackgroundImage,
     backgroundImage,
     renderContentView,
-    hasHeader
+    hasHeader,
+    headerMode
   } = props;
+
   return <FuramaView
-    style={[styles.container, style]}
+    style={[styles.container, {
+      paddingTop: Dimens.verticalScale(ifIphoneX(34, 0))
+    }, style]}
   >
     {hasBackgroundImage && <FuramaImage
       localSource={backgroundImage}
@@ -49,7 +53,9 @@ function FuramaContainer(props) {
         height: Dimens.heightScreen
       }}
     />}
-    {hasHeader && <HomeHeader/>}
+    {hasHeader && <FuramaHeader
+      headerMode={headerMode}
+    />}
     {renderContentView()}
   </FuramaView>
 };

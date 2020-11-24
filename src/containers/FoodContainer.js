@@ -1,32 +1,66 @@
-import React from 'react';
-import FuramaContainerFoods from "../components/common/FuramaContainerFoods";
+import React, {useState} from 'react';
 import FoodList from "../components/home/FoodList";
 import BeerList from "../components/home/BeerList";
-import Images from "../common/Images";
-import {ScrollView} from 'react-native'
 import FuramaView from "../components/common/FuramaView";
+import FuramaContainer from "../components/common/FuramaContainer";
+import {HEADER_MODE, NAVIGATION_CONSTANTS} from "../common/Constants";
+import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity";
+import {Image, Text, View} from "react-native";
+import FontSizes from "../common/FontSizes";
+import FuramaFlatList from "../components/common/FuramaFlatList";
+import FuramaText from "../components/common/FuramaText";
 
 const FoodContainer = (props) => {
-  const { navigation } = props;
+  const {navigation} = props;
+
+  const [categories, setCategories] = useState([]);
+
+  const FoodItem = () => {
+    return <FuramaView/>
+  }
+
+  const renderSectionItem = ({item}) => {
+    return (
+      <FuramaView>
+        <FoodItem/>
+        <FoodItem/>
+      </FuramaView>
+    )
+  }
+
+  const renderItem = ({item, index}) => {
+    const data = [];
+    item?.items?.forEach((foodItem) => {
+      
+    })
+    return (
+      <FuramaFlatList
+        data={data}
+        renderItem={renderSectionItem}
+      />
+    )
+  }
+
   return (
-    <FuramaContainerFoods
+    <FuramaContainer
       style={{}}
+      headerMode={HEADER_MODE.BACK}
       renderContentView={() => {
         return (
-          <>
-            <FuramaView
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                flex: 1,
-              }}
-            >
-              <FoodList navigation={navigation} />
-            </FuramaView>
-            <FuramaView style={{ justifyContent: "flex-end", flex: 1 }}>
-              <BeerList/>
-            </FuramaView>
-          </>
+          <FuramaFlatList
+            scrollEnabled={false}
+            numColumns={3}
+            data={categories}
+            keyExtractor={item => item.id}
+            renderItem={({item}) =>
+              <FuramaView>
+                <FuramaText/>
+                <FuramaFlatList
+                  renderItem={renderItem}
+                />
+              </FuramaView>
+            }
+          />
         );
       }}
     />
