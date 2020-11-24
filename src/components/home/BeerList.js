@@ -6,7 +6,7 @@ import Dimens from "../../common/Dimens";
 import FuramaText from "../common/FuramaText";
 import Images from "../../common/Images";
 
-const TypeNewsList = () => {
+const BeerList = () => {
     return (
       <>
         <FuramaText 
@@ -86,4 +86,4 @@ const dataMarketing = [
     }
 ]
 
-export default TypeNewsList;
+export default BeerList;
