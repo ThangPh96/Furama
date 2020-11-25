@@ -32,7 +32,9 @@ function FuramaText(props) {
 }
 
 const styles = StyleSheet.create({
-  text: {}
+  text: {
+    color: 'white'
+  }
 });
 
 export default FuramaText;

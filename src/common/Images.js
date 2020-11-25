@@ -51,6 +51,8 @@ import ic_unamused_face from "../assets/images/ic_unamused_face/ic_unamused_face
 import im_booking_table_success from "../assets/images/im_booking_table_success/im_booking_table_success.png";
 import im_hugging_face from "../assets/images/im_hugging_face/im_hugging_face.png";
 import ic_star_filled from "../assets/images/ic_star_filled/ic_star_filled.png";
+import im_rate from "../assets/images/im_rate/rate.png";
+import im_cart from "../assets/images/im_cart/im_cart.png";
 
 const Images = {
   ic_star_filled,
@@ -70,6 +72,7 @@ const Images = {
   ic_booking_minibar_success,
   im_empty_list,
   im_welcome,
+  im_cart,
   im_furama,
   im_dinner,
   im_notification,
@@ -105,7 +108,8 @@ const Images = {
   im_topping_2,
   im_tick,
   im_background,
-  im_background_success
+  im_background_success,
+  im_rate,
 }
 
 export default Images;
