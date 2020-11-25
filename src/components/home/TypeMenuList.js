@@ -7,7 +7,7 @@ import FuramaText from "../common/FuramaText";
 const data = [
     {
         id: 1,
-        name: 'Appetizers',
+        name: 'Appetizers'
     },
     {
         id: 2,
