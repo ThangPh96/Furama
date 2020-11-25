@@ -9,31 +9,7 @@ import Images from "../../common/Images";
 
 
 const HomeHeader = () => {
-<<<<<<< HEAD
-    return (
-        <FuramaView
-            style={{
-                height: Dimens.verticalScale(80),
-                flexDirection: 'row'
-            }}
-        >
-            <FuramaView style={{margin: 5,}}>
-                <FuramaText text={"Xin chào Nguyễn Văn A"}
-                            style={[{fontSize: FontSizes.size35, fontWeight: 'bold'},
-                                styles.txtView]}/>
-                <FuramaText text={'Chúc bạn có một kì nghỉ tuyệt vời'}
-                            style={[styles.txtView, {marginVertical: 5}]}/>
-            </FuramaView>
-            <FuramaView style={styles.imView}>
-                <FuramaImage
-                    localSource={Images.im_time_picker}
-                             style={{width: Dimens.widthScreen / 15, height: Dimens.widthScreen / 15}}/>
-                <FuramaImage localSource={Images.im_notification}
-                             style={{width: Dimens.widthScreen / 15, height: Dimens.widthScreen / 15}}/>
-            </FuramaView>
-        </FuramaView>
-    );
-=======
+
   return (
     <FuramaView
       style={{
@@ -82,7 +58,6 @@ const HomeHeader = () => {
       </FuramaView>
     </FuramaView>
   );
->>>>>>> 83bc179660ea0eee0a639d253a3ea864bf3dab46
 };
 const styles = StyleSheet.create({
   txtView: {
