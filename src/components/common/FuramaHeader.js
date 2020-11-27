@@ -9,7 +9,8 @@ FuramaHeader.propTypes = {
     PropTypes.array,
     PropTypes.object
   ]),
-  headerMode: PropTypes.string
+  headerMode: PropTypes.string,
+  navigation: PropTypes.object
 }
 
 FuramaHeader.defaultProps = {
@@ -20,7 +21,7 @@ function FuramaHeader(props) {
   const {
     headerMode,
     style,
-      navigation
+    navigation,
   } = props;
   switch (headerMode) {
     case HEADER_MODE.HOME:
