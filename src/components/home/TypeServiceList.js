@@ -19,7 +19,6 @@ const TypeServiceList = (props) => {
   const [service, setService] = useState([]);
   useEffect(() => {
     ServiceApis.getSerivce((res) => {
-      console.log('getService=========', res)
       setService(res.data.objects)
     }, err => {
       alert('Da co loi xay ra khi get service')

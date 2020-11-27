@@ -3,6 +3,10 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import {PropsType} from "react-native/ReactCommon/hermes/inspector/tools/msggen/src/Type";
+import PropTypes from "prop-types";
+
+
 
 const FuramaTouchableOpacity = (props) => {
   const {

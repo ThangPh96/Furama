@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
-import FoodList from "../components/home/FoodList";
-import BeerList from "../components/home/BeerList";
 import FuramaView from "../components/common/FuramaView";
 import FuramaContainer from "../components/common/FuramaContainer";
 import {HEADER_MODE, NAVIGATION_CONSTANTS} from "../common/Constants";
-import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity";
-import {Image, Text, View} from "react-native";
-import FontSizes from "../common/FontSizes";
 import FuramaFlatList from "../components/common/FuramaFlatList";
 import FuramaText from "../components/common/FuramaText";
-import TypeMenuList from "../components/home/TypeMenuList";
 
 const FoodContainer = (props) => {
     const {navigation} = props;

@@ -21,7 +21,6 @@ const TypeNewsList = () => {
     ServiceApis.getNews({
       page: page
     }, res => {
-      console.log('getNews===========', res)
       if (page === 1) {
         setNews(res.data.objects)
         setRefreshing(false)
@@ -52,7 +51,7 @@ const TypeNewsList = () => {
       />
       <FuramaFlatList
         refreshing={refreshing}
-        horizontal={false}
+        horizontal={true}
         data={news}
         keyExtractor={(item) => item.id}
         onEndReached={loadMore}
