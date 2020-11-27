@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import FuramaContainer from "../components/common/FuramaContainer";
 import TypeServiceList from "../components/home/TypeServiceList";
 import TypeNewsList from "../components/home/TypeNewsList";
@@ -6,10 +6,10 @@ import Images from "../common/Images";
 import {ScrollView} from 'react-native'
 import FuramaView from "../components/common/FuramaView";
 import Dimens from "../common/Dimens";
+import FoodApis from "../services/apis/FoodApis";
 
 const HomeContainer = (props) => {
   const {navigation} = props;
-
 
 
   return (

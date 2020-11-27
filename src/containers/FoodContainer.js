@@ -4,14 +4,22 @@ import FuramaContainer from "../components/common/FuramaContainer";
 import {HEADER_MODE, NAVIGATION_CONSTANTS} from "../common/Constants";
 import FuramaFlatList from "../components/common/FuramaFlatList";
 import FuramaText from "../components/common/FuramaText";
+import FoodApis from "../services/apis/FoodApis";
+import Dimens from "../common/Dimens";
 import FuramaImage from "../components/common/FuramaImage";
 import Images from "../common/Images";
-import Dimens from "../common/Dimens";
 
 const FoodContainer = (props) => {
   const {navigation} = props;
 
   const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    FoodApis.getFood((res) => {
+      setCategories(res.data.categories)
+    }, err => {
+      alert('Da co loi xay ra khi get service')
+    })
+  }, [])
 
   useEffect(() => {
     const onSuccess = (res) => {

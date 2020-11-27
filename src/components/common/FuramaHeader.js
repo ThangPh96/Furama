@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {HEADER_MODE} from "../../common/Constants";
 import HomeHeader from "../home/HomeHeader";
-import FoodHeader from "../home/FoodHeader";
+import DetailHeader from "../home/DetailHeader";
 import React from "react";
 
 FuramaHeader.propTypes = {
@@ -21,7 +21,7 @@ function FuramaHeader(props) {
   const {
     headerMode,
     style,
-    navigation
+    navigation,
   } = props;
   switch (headerMode) {
     case HEADER_MODE.HOME:
@@ -29,8 +29,9 @@ function FuramaHeader(props) {
         style={style}
       />
     case HEADER_MODE.BACK:
-      return <FoodHeader
+      return <DetailHeader
         style={style}
+        navigation={navigation}
       />
     default:
       return <HomeHeader

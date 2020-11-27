@@ -25,8 +25,8 @@ const DetailHeader = (props) => {
           width: Dimens.scale(30),
           height: Dimens.scale(30),
           position: "absolute",
-          left: Dimens.scale(10),
-          top: Dimens.scale(10),
+          left: 10,
+          top: 10,
         }}
         onPress={() => {
           navigation?.navigate(NAVIGATION_CONSTANTS.HOME)
