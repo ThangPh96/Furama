@@ -10,7 +10,10 @@ FuramaText.propTypes = {
     PropTypes.array,
     PropTypes.object
   ]),
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+  ]),
 }
 
 FuramaText.defaultProps = {

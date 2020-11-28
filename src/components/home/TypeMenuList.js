@@ -36,7 +36,7 @@ const data = [
 ]
 
 
-function TypeMenuList() {
+function ypeMenuList() {
     return (
         <>
             <FuramaFlatList
