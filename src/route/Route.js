@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeContainer from "../containers/HomeContainer";
 import {NAVIGATION_CONSTANTS} from "../common/Constants";
 import FoodContainer from "../containers/FoodContainer";
+import ToppingContainer from "../containers/ToppingContainer";
 
 const Stack = createStackNavigator();
 export default function Route() {
@@ -24,6 +25,13 @@ export default function Route() {
             headerShown: false,
           }}
         />
+          <Stack.Screen
+              name={NAVIGATION_CONSTANTS.TOPPING}
+              component={ToppingContainer}
+              options={{
+                  headerShown: false,
+              }}
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );

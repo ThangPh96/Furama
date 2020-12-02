@@ -31,6 +31,7 @@ FuramaContainer.defaultProps = {
 function FuramaContainer(props) {
     const {
         style,
+        title,
         hasBackgroundImage,
         backgroundImage,
         renderContentView,
@@ -56,6 +57,7 @@ function FuramaContainer(props) {
             }}
         />}
         {hasHeader && <FuramaHeader
+            title={title}
             headerMode={headerMode}
             navigation={navigation}
         />}

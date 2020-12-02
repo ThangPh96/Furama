@@ -11,7 +11,7 @@ import Images from "../common/Images";
 import {StyleSheet} from 'react-native'
 import FontSizes from "../common/FontSizes";
 import FuramaLinearGradient from "../components/common/FuramaLinearGradient";
-import FoodItems from "../components/home/FoodItems";
+import FoodItems from "../components/food/FoodItems";
 
 const FoodContainer = (props) => {
     const {navigation} = props;
@@ -41,8 +41,13 @@ const FoodContainer = (props) => {
     const renderItem = ({item, index}) => {
         return (
             <FuramaView>
-                <FoodItems item={item[0]}/>
-                {item[1] && <FoodItems item={item[1]}/>}
+                <FoodItems item={item[0]}
+                           navigation={navigation}
+                />
+                {item[1] && <FoodItems
+                    item={item[1]}
+                    navigation={navigation}
+                />}
             </FuramaView>
         )
     }
@@ -64,6 +69,8 @@ const FoodContainer = (props) => {
 
     return (
         <FuramaContainer
+            onShowCart={true}
+            title={'Đồ ăn và Thức uống'}
             navigation={navigation}
             style={{}}
             headerMode={HEADER_MODE.BACK}

@@ -8,13 +8,19 @@ import FuramaText from "../common/FuramaText";
 import {StyleSheet} from "react-native";
 import FontSizes from "../../common/FontSizes";
 import FuramaTouchableOpacity from "../common/FuramaTouchableOpacity";
+import {NAVIGATION_CONSTANTS} from "../../common/Constants";
 
-const FoodItems = (props) => {
-    const {item} = props;
+const FoodItems = (props,) => {
+    const {item,navigation} = props;
     //console.log('item.price_list.list_price', item.price_list.list_price)
+    const onPress=()=>{
+        navigation?.navigate(NAVIGATION_CONSTANTS.TOPPING)
+
+    }
     return (
         <FuramaTouchableOpacity
             style={styles.itemList}
+            onPress={onPress}
         >
             <FuramaImage
                 // uri={item.thumbnail}
@@ -26,12 +32,7 @@ const FoodItems = (props) => {
 
                 }}
             >
-                <FuramaLinearGradient
-                    style={{
-                        flex: 1,
-                        backgroundColor: 'transparent',
-                        opacity: 0.4
-                    }}/>
+                <FuramaLinearGradient/>
             </FuramaImage>
             <FuramaView style={{alignItems: 'center'}}>
                 <FuramaText
