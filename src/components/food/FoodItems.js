@@ -17,6 +17,9 @@ const FoodItems = (props,) => {
         navigation?.navigate(NAVIGATION_CONSTANTS.TOPPING)
 
     }
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + 'đ';
+    }
     return (
         <FuramaTouchableOpacity
             style={styles.itemList}
@@ -27,7 +30,7 @@ const FoodItems = (props,) => {
                 localSource={Images.im_welcome}
                 style={{
                     width: Dimens.scale(200),
-                    height: Dimens.scale(130),
+                    height: Dimens.scale(200 * 218 / 387),
                     borderRadius: Dimens.scale(8),
 
                 }}
@@ -42,7 +45,7 @@ const FoodItems = (props,) => {
                 />
                 <FuramaText
                     style={styles.txtPrice}
-                    text={item.price_list.list_price + ' đ'}
+                    text={numberWithCommas(item.price_list.list_price)}
                 />
             </FuramaView>
         </FuramaTouchableOpacity>

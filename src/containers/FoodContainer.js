@@ -36,8 +36,6 @@ const FoodContainer = (props) => {
     //   FoodApis.getFood(onSuccess, onErr)
     // }, [])
 
-
-
     const renderItem = ({item, index}) => {
         return (
             <FuramaView>

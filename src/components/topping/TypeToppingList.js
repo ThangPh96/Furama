@@ -78,12 +78,12 @@ const data = [
 function TypeToppingList(props) {
     const {navigation, item} = props
     const [topping, setTopping] = useState([])
-    // useEffect(() => {
-    //     ServiceApis.getSerivce(res => {
-    //             setTopping(res.data.object)
-    //         },
-    //         err => alert('Fail'))
-    // }, [])
+    useEffect(() => {
+        ServiceApis.getSerivce(res => {
+                setTopping(res.data.object)
+            },
+            err => alert('Fail'))
+    }, [])
     const renderItem = ({item}) => {
         return (
             <FuramaTouchableOpacity>
