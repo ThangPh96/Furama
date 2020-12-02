@@ -1,42 +1,45 @@
 import PropTypes from "prop-types";
-import {HEADER_MODE} from "../../common/Constants";
+import { HEADER_MODE } from "../../common/Constants";
 import HomeHeader from "../home/HomeHeader";
 import DetailHeader from "../home/DetailHeader";
 import React from "react";
 
 FuramaHeader.propTypes = {
-  style: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object
-  ]),
-  headerMode: PropTypes.string,
-  navigation: PropTypes.object
-}
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  headerData: {
+    hasHeader: PropTypes.bool,
+    headerMode: PropTypes.string,
+    title: PropTypes.string,
+    rightIcon: PropTypes.any,
+  },
+  navigation: PropTypes.object,
+};
 
 FuramaHeader.defaultProps = {
-  headerMode: HEADER_MODE.HOME
-}
+  headerData: {
+    hasHeader: true,
+    headerMode: null,
+  },
+};
 
 function FuramaHeader(props) {
-  const {
-    headerMode,
-    style,
-    navigation,
-  } = props;
-  switch (headerMode) {
+  const { headerData, style, navigation } = props;
+  switch (headerData.headerMode) {
     case HEADER_MODE.HOME:
-      return <HomeHeader
-        style={style}
-      />
+      return <HomeHeader 
+        style={style} 
+        headerData={headerData} 
+        />;
     case HEADER_MODE.BACK:
-      return <DetailHeader
-        style={style}
-        navigation={navigation}
-      />
+      return (
+        <DetailHeader
+          style={style}
+          navigation={navigation}
+          headerData={headerData}
+        />
+      );
     default:
-      return <HomeHeader
-        style={style}
-      />
+      return null;
   }
 }
 

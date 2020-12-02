@@ -5,21 +5,21 @@ import FuramaFlatList from "../common/FuramaFlatList";
 import FontSizes from "../../common/FontSizes";
 import FuramaTouchableOpacity from "../common/FuramaTouchableOpacity";
 import {NAVIGATION_CONSTANTS} from "../../common/Constants";
-import Images from "../../common/Images";
 import FuramaView from '../common/FuramaView';
-import ServiceApis from "../../services/apis/ServiceApis";
+import BookingApis from "../../services/apis/BookingApis";
 import FuramaImage from "../common/FuramaImage";
 
-const TypeServiceList = (props) => {
+const SeaFood = (props) => {
   const {
     navigation,
     style
   } = props;
 
-  const [service, setService] = useState([]);
+  const [foodAndDrink, setFoodAndDrink] = useState([]);
   useEffect(() => {
-    ServiceApis.getSerivce((res) => {
-      setService(res.data.objects)
+    BookingApis.postFoodAndDrink((res) => {
+      console.log('getService=========', res)
+      setFoodAndDrink(res.data.objects)
     }, err => {
       alert('Da co loi xay ra khi get service')
     })
@@ -35,13 +35,13 @@ const TypeServiceList = (props) => {
     >
       <FuramaFlatList
         scrollEnabled={false}
-        numColumns={4}
-        data={service}
+        horizontal={true}
+        data={foodAndDrink}
         keyExtractor={item => item.id}
         renderItem={({item}) =>
           <FuramaTouchableOpacity
             style={styles.itemType}
-            onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL)}
+            // onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL)}
           >
             <View>
               <FuramaImage
@@ -62,7 +62,7 @@ const TypeServiceList = (props) => {
 const styles = StyleSheet.create({
   itemType: {
     backgroundColor: 'white',
-    margin: 10,
+    margin: 5,
     borderRadius: 20,
     width: Dimens.scale(80),
     height: Dimens.scale(80),
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default TypeServiceList;
+export default SeaFood;

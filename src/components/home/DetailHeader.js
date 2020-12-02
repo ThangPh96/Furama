@@ -7,11 +7,10 @@ import FontSizes from "../../common/FontSizes";
 import FuramaImage from "../common/FuramaImage";
 import Images from "../../common/Images";
 import FuramaTouchableOpacity from "../common/FuramaTouchableOpacity";
-import {NAVIGATION_CONSTANTS} from "../../common/Constants";
 
 
 const DetailHeader = (props) => {
-  const {navigation} = props
+  const {navigation, headerData} = props
   return (
     <FuramaView
       style={{
@@ -29,7 +28,7 @@ const DetailHeader = (props) => {
           top: 10,
         }}
         onPress={() => {
-          navigation?.navigate(NAVIGATION_CONSTANTS.HOME)
+          navigation.goBack()
         }}
       >
         <FuramaImage
@@ -39,18 +38,16 @@ const DetailHeader = (props) => {
           }}
         />
       </FuramaTouchableOpacity>
-      <FuramaView>
         <FuramaText
-          text={"Đồ ăn & thức uống"}
+          text={headerData.title}
           style={[
             {fontSize: FontSizes.size45, fontWeight: "bold"},
             styles.txtView,
           ]}
         />
-      </FuramaView>
       <FuramaView style={styles.imView}>
         <FuramaImage
-          localSource={Images.im_cart}
+          localSource={headerData.rightIcon}
           style={{
             width: Dimens.widthScreen / 15,
             height: Dimens.widthScreen / 15,

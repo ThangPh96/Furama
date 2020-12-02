@@ -12,4 +12,16 @@ const getFood = (onSuccess, onError) => {
         }
     )
 }
-export default {getFood}
+
+const getToppings = (id, onSuccess, onError) => {
+    FuramaService.GET({
+            url: 'api/v1/item/get/topping',
+            params: {
+                item_id: id
+            },
+            onSuccess,
+            onError
+        }
+    )
+}
+export default {getFood, getToppings}

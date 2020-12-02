@@ -2,11 +2,9 @@ import React, {useEffect} from 'react';
 import FuramaContainer from "../components/common/FuramaContainer";
 import TypeServiceList from "../components/home/TypeServiceList";
 import TypeNewsList from "../components/home/TypeNewsList";
-import Images from "../common/Images";
-import {ScrollView} from 'react-native'
-import FuramaView from "../components/common/FuramaView";
 import Dimens from "../common/Dimens";
-import FoodApis from "../services/apis/FoodApis";
+import { HEADER_MODE, NAVIGATION_CONSTANTS } from "../common/Constants";
+
 
 const HomeContainer = (props) => {
   const {navigation} = props;
@@ -15,6 +13,10 @@ const HomeContainer = (props) => {
   return (
     <FuramaContainer
       style={{}}
+      headerData={{
+        headerMode: HEADER_MODE.HOME,
+        hasHeader: true
+      }}
       renderContentView={() => {
         return (
           <>
