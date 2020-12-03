@@ -36,7 +36,9 @@ const FoodContainer = (props) => {
           marginVertical: Dimens.verticalScale(8),
           borderRadius: Dimens.scale(8),
         }}
-        onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.FOOD, {item})}
+        onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.FOOD, {
+          duc: item
+        })}
 
       >
         <FuramaText
