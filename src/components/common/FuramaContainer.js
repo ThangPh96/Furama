@@ -19,7 +19,8 @@ FuramaContainer.propTypes = {
     backgroundImage: PropTypes.number || PropTypes.string,
     hasHeader: PropTypes.bool,
     headerMode: PropTypes.string,
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
+    onShowCart: PropTypes.bool,
 }
 
 FuramaContainer.defaultProps = {
@@ -37,7 +38,8 @@ function FuramaContainer(props) {
         renderContentView,
         hasHeader,
         headerMode,
-        navigation
+        navigation,
+        onShowCart
     } = props;
 
     return <FuramaView
@@ -57,6 +59,7 @@ function FuramaContainer(props) {
             }}
         />}
         {hasHeader && <FuramaHeader
+            onShowCart={onShowCart}
             title={title}
             headerMode={headerMode}
             navigation={navigation}

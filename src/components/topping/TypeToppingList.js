@@ -18,27 +18,32 @@ const data = [
             {
                 id: 1,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 2,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 3,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 4,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 5,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
         ]
     }, {
@@ -48,27 +53,32 @@ const data = [
             {
                 id: 1,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 2,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 3,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 4,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
             {
                 id: 5,
                 title: 'mayonnaise',
-                imageTopping: Images.ic_smiling_face_with_heart_eyes
+                imageTopping: Images.im_6,
+                price: 300000
             },
         ]
     }
@@ -92,7 +102,12 @@ function TypeToppingList(props) {
                         style={styles.imageTopping}
                         localSource={item.imageTopping}/>
                     <FuramaText
+                        style={{ fontSize: FontSizes.size22}}
                         text={item.title}
+                    />
+                    <FuramaText
+                        style={{fontSize: FontSizes.size20}}
+                        text={item.price + ' đ'}
                     />
                 </FuramaView>
             </FuramaTouchableOpacity>
@@ -109,6 +124,8 @@ function TypeToppingList(props) {
                 text={'Furama Resturant'}
             />
             <FuramaFlatList
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
                 data={data}
                 keyExtractor={item => item.id}
                 renderItem={({item}) =>
@@ -117,6 +134,8 @@ function TypeToppingList(props) {
                             style={styles.txtName}
                             text={item.name}/>
                         <FuramaFlatList
+                            showsVerticalScrollIndicator={false}
+                            showsHorizontalScrollIndicator={false}
                             horizontal={true}
                             data={item.content}
                             keyExtractor={item => item.id}
@@ -125,6 +144,7 @@ function TypeToppingList(props) {
                     </FuramaView>
                 }
             />
+            <FuramaView/>
         </>
     )
 }
@@ -137,10 +157,11 @@ const styles = StyleSheet.create({
     },
     txtContainer: {
         fontSize: FontSizes.size45,
-        top:-50,
-        left:30
+        top: -50,
+        left: 30
     },
     imageTopping: {
+        borderRadius: Dimens.scale(50),
         height: Dimens.scale(40),
         width: Dimens.scale(40)
     },

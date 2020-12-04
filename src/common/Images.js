@@ -53,6 +53,10 @@ import im_hugging_face from "../assets/images/im_hugging_face/im_hugging_face.pn
 import ic_star_filled from "../assets/images/ic_star_filled/ic_star_filled.png";
 import im_rate from "../assets/images/im_rate/rate.png";
 import im_cart from "../assets/images/im_cart/im_cart.png";
+import im_6 from "../assets/images/image.png";
+import im_note from "../assets/images/writing.png";
+
+
 
 const Images = {
   ic_star_filled,
@@ -110,6 +114,8 @@ const Images = {
   im_background,
   im_background_success,
   im_rate,
+  im_6,
+  im_note
 }
 
 export default Images;

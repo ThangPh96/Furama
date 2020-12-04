@@ -14,7 +14,7 @@ const FoodItems = (props,) => {
     const {item,navigation} = props;
     //console.log('item.price_list.list_price', item.price_list.list_price)
     const onPress=()=>{
-        navigation?.navigate(NAVIGATION_CONSTANTS.TOPPING)
+        navigation?.navigate(NAVIGATION_CONSTANTS.TOPPING,item)
 
     }
     return (

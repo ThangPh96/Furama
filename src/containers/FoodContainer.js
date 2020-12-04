@@ -12,6 +12,7 @@ import {StyleSheet} from 'react-native'
 import FontSizes from "../common/FontSizes";
 import FuramaLinearGradient from "../components/common/FuramaLinearGradient";
 import FoodItems from "../components/food/FoodItems";
+import PropTypes from "prop-types";
 
 const FoodContainer = (props) => {
     const {navigation} = props;

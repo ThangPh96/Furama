@@ -32,6 +32,13 @@ export default function Route() {
                   headerShown: false,
               }}
           />
+          <Stack.Screen
+              name={NAVIGATION_CONSTANTS.CART}
+              component={ToppingContainer}
+              options={{
+                  headerShown: false,
+              }}
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );

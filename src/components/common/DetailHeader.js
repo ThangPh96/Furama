@@ -7,14 +7,17 @@ import FontSizes from "../../common/FontSizes";
 import FuramaImage from "./FuramaImage";
 import Images from "../../common/Images";
 import FuramaTouchableOpacity from "./FuramaTouchableOpacity";
+import {NAVIGATION_CONSTANTS} from "../../common/Constants";
 
 const DetailHeader = (props) => {
     const {navigation, title, onShowCart} = props
-    console.log(onShowCart)
+    const onPress = () => {
+        navigation?.goBack()
+    }
     return (
         <FuramaView
             style={{
-                height: Dimens.verticalScale(64),
+                height: Dimens.scale(64),
                 flexDirection: "row",
                 justifyContent: "center",
             }}
@@ -27,9 +30,7 @@ const DetailHeader = (props) => {
                     left: 10,
                     top: 10,
                 }}
-                onPress={() => {
-                    navigation?.goBack()
-                }}
+                onPress={onPress}
             >
                 <FuramaImage
                     localSource={Images.im_back}
@@ -48,13 +49,17 @@ const DetailHeader = (props) => {
                 />
             </FuramaView>
             <FuramaView style={styles.imView}>
-                {onShowCart ? <FuramaImage
-                    localSource={Images.im_cart}
-                    style={{
-                        width: Dimens.widthScreen / 15,
-                        height: Dimens.widthScreen / 15,
-                    }}
-                /> : <></>
+                {onShowCart ?
+                    <FuramaTouchableOpacity
+                    onPress={navigation.navigate(NAVIGATION_CONSTANTS.CART)}>
+                        <FuramaImage
+                        localSource={Images.im_cart}
+                        style={{
+                            width: Dimens.widthScreen / 15,
+                            height: Dimens.widthScreen / 15,
+                        }}
+                    />
+                    </FuramaTouchableOpacity> : <></>
                 }
             </FuramaView>
         </FuramaView>

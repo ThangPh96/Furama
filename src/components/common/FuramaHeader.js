@@ -21,6 +21,7 @@ FuramaHeader.defaultProps = {
 
 function FuramaHeader(props) {
     const {
+        onShowCart,
         headerMode,
         title,
         style,
@@ -33,6 +34,7 @@ function FuramaHeader(props) {
             />
         case HEADER_MODE.BACK:
             return <DetailHeader
+                onShowCart={onShowCart}
                 title={title}
                 style={style}
                 navigation={navigation}

@@ -3,7 +3,6 @@ import {
   StyleSheet,
   TextInput,
 } from 'react-native';
-import AppStyles from "../common/AppStyles";
 import PropTypes from 'prop-types'
 
 const FuramaTextInput = forwardRef((props, ref) => {
@@ -39,7 +38,7 @@ const FuramaTextInput = forwardRef((props, ref) => {
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: Colors.greyscale7,
-    paddingHorizontal: AppStyles.scale(19),
+    //paddingHorizontal: AppStyles.scale(19),
     justifyContent: 'center',
   },
 });
