@@ -7,37 +7,38 @@ import Images from "../../common/Images";
 import Dimens from "../../common/Dimens";
 
 function Note(props) {
-    const {text} = props;
-    return (
-        <FuramaView
-            flexDirection={'row'}
-            style={styles.containerNote}>
-            <FuramaImage
-                tintColor={'#dcdcdc'}
-                style={styles.imNote}
-                localSource={Images.im_note}/>
-            <FuramaTextInput
-                placeholder={'Ghi chú'}
-                style={styles.inputNote}
-            >
+  const {text, style} = props;
+  return (
+    <FuramaView
+      flexDirection={'row'}
+      style={[styles.containerNote, style]}>
+      <FuramaImage
+        tintColor={'#dcdcdc'}
+        style={styles.imNote}
+        localSource={Images.im_note}/>
+      <FuramaTextInput
+        placeholder={'Ghi chú'}
+        style={styles.inputNote}
+      >
 
-            </FuramaTextInput>
-        </FuramaView>
-    )
+      </FuramaTextInput>
+    </FuramaView>
+  )
 }
 
 const styles = StyleSheet.create({
-    inputNote: {},
-    containerNote: {
-        backgroundColor: 'white',
-        width: Dimens.widthScreen - Dimens.scale(40),
-        alignItems: 'center',
-        borderRadius:Dimens.scale(10),
-        paddingHorizontal:Dimens.scale(10)
-    },
-    imNote: {
-        height: Dimens.scale(20),
-        width: Dimens.scale(20)
-    },
+  inputNote: {},
+  containerNote: {
+    backgroundColor: 'white',
+    width: Dimens.widthScreen - Dimens.scale(40),
+    alignItems: 'center',
+    borderRadius: Dimens.scale(10),
+    paddingHorizontal: Dimens.scale(10),
+    height: Dimens.verticalScale(30)
+  },
+  imNote: {
+    height: Dimens.scale(20),
+    width: Dimens.scale(20)
+  },
 });
 export default Note

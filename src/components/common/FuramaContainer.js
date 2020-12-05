@@ -44,7 +44,8 @@ function FuramaContainer(props) {
 
     return <FuramaView
         style={[styles.container, {
-            paddingTop: Dimens.verticalScale(ifIphoneX(34, 0))
+            paddingTop: Dimens.verticalScale(ifIphoneX(34, 0)),
+            paddingBottom: Dimens.verticalScale(ifIphoneX(16, 0))
         }, style]}
     >
         {hasBackgroundImage && <FuramaImage

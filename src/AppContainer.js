@@ -9,7 +9,7 @@ function AppContainer() {
 
   return <FuramaView style={{flex: 1}}>
     <Route/>
-    {/*{loading && <FuramaLoading/>}*/}
+    {loading && <FuramaLoading/>}
   </FuramaView>
 }
 

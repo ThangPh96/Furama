@@ -6,8 +6,9 @@ import TypeToppingList from "../components/topping/TypeToppingList";
 import SelectionToppingItem from "../components/topping/SelectionToppingItem";
 import FuramaView from "../components/common/FuramaView";
 import Dimens from "../common/Dimens";
+import {useSelector} from "react-redux";
 
-function ToppingContainer(props) {
+function WelcomeContainer(props) {
   const {navigation, route} = props
   // const item=route.params
   return (
@@ -20,14 +21,9 @@ function ToppingContainer(props) {
           <FuramaView
             style={{
               flex: 1,
+              backgroundColor: 'pink'
             }}
           >
-            <TypeToppingList
-              style={{
-                marginBottom: Dimens.verticalScale(120)
-              }}
-            />
-            <SelectionToppingItem/>
           </FuramaView>
         )
       }}
@@ -35,4 +31,4 @@ function ToppingContainer(props) {
   );
 }
 
-export default ToppingContainer;
+export default WelcomeContainer;
