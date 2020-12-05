@@ -52,7 +52,7 @@ const DetailHeader = (props) => {
       <FuramaView style={styles.imView}>
         {onShowCart ?
           <FuramaTouchableOpacity
-            onPress={navigation.navigate(NAVIGATION_CONSTANTS.CART)}>
+            onPress={() => navigation.navigate(NAVIGATION_CONSTANTS.CART)}>
             <FuramaImage
               localSource={Images.im_cart}
               style={{

@@ -6,15 +6,33 @@ import TypeToppingList from "../components/topping/TypeToppingList";
 import SelectionToppingItem from "../components/topping/SelectionToppingItem";
 import FuramaView from "../components/common/FuramaView";
 import Dimens from "../common/Dimens";
+import store from "../redux/stores/Store";
+import {setCartData} from "../redux/actions/FoodActions";
 
 function ToppingContainer(props) {
   const {navigation, route} = props
-  // const item=route.params
+  const {item} = route.params || {}
+
+  const orderFood = () => {
+    const state = store.getState();
+    const {cartData} = state.food;
+    const arr = cartData.filter((cartItem) => cartItem.id === item.id)
+    if (arr?.length === 0) {
+      cartData.push(item)
+      store.dispatch(setCartData(cartData))
+    }
+    navigation.goBack()
+  }
+
   return (
     <FuramaContainer
-      navigation={navigation}
+      headerData={{
+        navigation: navigation,
+        headerMode: HEADER_MODE.BACK,
+        hasHeader: true,
+        title: item?.item_name,
+      }}
       title={'topping'}
-      headerMode={HEADER_MODE.BACK}
       renderContentView={() => {
         return (
           <FuramaView
@@ -27,7 +45,9 @@ function ToppingContainer(props) {
                 marginBottom: Dimens.verticalScale(120)
               }}
             />
-            <SelectionToppingItem/>
+            <SelectionToppingItem
+              orderFood={orderFood}
+            />
           </FuramaView>
         )
       }}

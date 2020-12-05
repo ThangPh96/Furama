@@ -10,7 +10,7 @@ import FontSizes from "../../common/FontSizes";
 import Note from "./Note";
 
 function SelectionToppingItem(props) {
-
+  const {orderFood} = props;
   const [result, setResult] = useState(0)
   const onPressPlus = () => {
     setResult(result + 1)
@@ -54,7 +54,10 @@ function SelectionToppingItem(props) {
             />
           </FuramaView>
         </FuramaView>
-        <FuramaTouchableOpacity style={styles.btnFinish}>
+        <FuramaTouchableOpacity
+          style={styles.btnFinish}
+          onPress={orderFood}
+        >
           <FuramaText
             style={{color: "#056055"}}
             text={'Money'}/>

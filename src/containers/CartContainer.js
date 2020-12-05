@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {StyleSheet} from 'react-native'
 import FuramaContainer from "../components/common/FuramaContainer";
-import {HEADER_MODE} from "../common/Constants";
+import {HEADER_MODE, NAVIGATION_CONSTANTS} from "../common/Constants";
 import Images from "../common/Images";
 import FuramaFlatList from "../components/common/FuramaFlatList";
 import FuramaView from "../components/common/FuramaView";
@@ -12,36 +12,15 @@ import ButtonAmount from "../components/topping/ButtonAmount";
 import FontSizes from "../common/FontSizes";
 import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity";
 import Colors from "../common/Colors";
+import {useSelector} from "react-redux";
 
 
-function CartContainer() {
-  const data = [
-    {
-      id: 1,
-      name: 'FURAMA retaurant ',
-      topping: ' Sốt, rau',
-      note: ' không cay',
-      price: 200000,
-      image: Images.im_food
-    },
-    {
-      id: 2,
-      name: 'FURAMA retaurant ',
-      topping: ' Sốt, rau',
-      note: ' không cay',
-      price: 200000,
-      image: Images.im_food
-    },
-    {
-      id: 3,
-      name: 'FURAMA retaurant ',
-      topping: ' Sốt, rau',
-      note: ' không cay',
-      price: 200000,
-      image: Images.im_food
-    },
-  ]
+function CartContainer(props) {
+  const {navigation} = props;
+  const {cartData} = useSelector(state => state.food)
   const [result, setResult] = useState(0)
+  useEffect(() => {
+  }, [])
   const onPressPlus = () => {
     setResult(result + 1)
   }
@@ -59,7 +38,7 @@ function CartContainer() {
         <FuramaView style={{flex: 1, marginHorizontal: Dimens.scale(10), justifyContent: 'space-between'}}>
           <FuramaText
             style={{fontSize: FontSizes.size35}}
-            text={item.name}
+            text={item.item_name}
           />
           <FuramaText
             style={{fontSize: FontSizes.size28}}
@@ -87,7 +66,7 @@ function CartContainer() {
             </FuramaView>
             <FuramaText
               style={{fontSize: FontSizes.size28}}
-              text={item.price + ' đ'}/>
+              text={item.price_list?.list_price + ' đ'}/>
           </FuramaView>
           <FuramaText
             style={{fontSize: FontSizes.size28}}
@@ -102,7 +81,12 @@ function CartContainer() {
   }
   return (
     <FuramaContainer
-      headerMode={HEADER_MODE.BACK}
+      headerData={{
+        navigation: navigation,
+        headerMode: HEADER_MODE.BACK,
+        hasHeader: true,
+        // title: 'Đồ ăn & thức uống',
+      }}
       title={'Món đã chọn'}
       renderContentView={() => {
         return (
@@ -115,7 +99,7 @@ function CartContainer() {
               style={{
                 height: Dimens.heightScreen - Dimens.verticalScale(160)
               }}
-              data={data}
+              data={cartData}
               keyExtractor={item => item.id}
               renderItem={renderItem}
             />

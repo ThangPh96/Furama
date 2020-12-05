@@ -36,8 +36,8 @@ const FoodContainer = (props) => {
           marginVertical: Dimens.verticalScale(8),
           borderRadius: Dimens.scale(8),
         }}
-        onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.FOOD, {
-          duc: item
+        onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.TOPPING, {
+          item
         })}
 
       >
@@ -119,7 +119,6 @@ const FoodContainer = (props) => {
                   horizontal={true}
                   renderItem={renderItem}
                   data={handleFoodItems(item.items)}
-
                 />
               </>
             )}

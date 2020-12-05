@@ -7,10 +7,13 @@ import FoodContainer from "../containers/FoodContainer";
 import ToppingContainer from "../containers/ToppingContainer";
 import {useSelector} from "react-redux";
 import FoodDetail from "../containers/FoodDetail";
+import WelcomeContainer from "../containers/WelcomeContainer";
+import CartContainer from "../containers/CartContainer";
 
 const Stack = createStackNavigator();
 export default function Route() {
-  const {contact} = useSelector(state => state.auth.contact);
+  const contact = useSelector(state => state.auth.contact);
+
   const UserScreens = () => {
     return <>
       <Stack.Screen
@@ -36,7 +39,7 @@ export default function Route() {
       />
       <Stack.Screen
         name={NAVIGATION_CONSTANTS.CART}
-        component={ToppingContainer}
+        component={CartContainer}
         options={{
           headerShown: false,
         }}
@@ -46,36 +49,8 @@ export default function Route() {
   const WelcomeScreens = () => {
     return <>
       <Stack.Screen
-        name={NAVIGATION_CONSTANTS.HOME}
-        component={HomeContainer}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name={NAVIGATION_CONSTANTS.DETAIL}
-        component={FoodContainer}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name={NAVIGATION_CONSTANTS.TOPPING}
-        component={ToppingContainer}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name={NAVIGATION_CONSTANTS.CART}
-        component={ToppingContainer}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name={NAVIGATION_CONSTANTS.FOOD}
-        component={FoodDetail}
+        name={NAVIGATION_CONSTANTS.WELCOME}
+        component={WelcomeContainer}
         options={{
           headerShown: false,
         }}
