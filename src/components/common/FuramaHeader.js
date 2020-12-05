@@ -6,44 +6,41 @@ import React from "react";
 import {PropsType} from "react-native/ReactCommon/hermes/inspector/tools/msggen/src/Type";
 
 FuramaHeader.propTypes = {
-    style: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object
-    ]),
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  headerData: {
+    hasHeader: PropTypes.bool,
     headerMode: PropTypes.string,
-    navigation: PropTypes.object,
-    title: PropsType.string,
-}
+    title: PropTypes.string,
+    rightIcon: PropTypes.any,
+  },
+  navigation: PropTypes.object,
+};
 
 FuramaHeader.defaultProps = {
-    headerMode: HEADER_MODE.HOME
-}
+  headerData: {
+    hasHeader: true,
+    headerMode: null,
+  },
+};
 
 function FuramaHeader(props) {
-    const {
-        onShowCart,
-        headerMode,
-        title,
-        style,
-        navigation,
-    } = props;
-    switch (headerMode) {
-        case HEADER_MODE.HOME:
-            return <HomeHeader
-                style={style}
-            />
-        case HEADER_MODE.BACK:
-            return <DetailHeader
-                onShowCart={onShowCart}
-                title={title}
-                style={style}
-                navigation={navigation}
-            />
-        default:
-            return <HomeHeader
-                style={style}
-            />
-    }
+  const {headerData, style, navigation} = props;
+  switch (headerData.headerMode) {
+    case HEADER_MODE.HOME:
+      return <HomeHeader
+        style={style}
+        headerData={headerData}
+      />;
+    case HEADER_MODE.BACK:
+      return (
+        <DetailHeader
+          style={style}
+          headerData={headerData}
+        />
+      );
+    default:
+      return null;
+  }
 }
 
 export default FuramaHeader;

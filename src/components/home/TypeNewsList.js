@@ -88,14 +88,14 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 50,
     marginHorizontal: 10,
-    width: Dimens.widthScreen / 1.2,
+    width: Dimens.widthScreen / 1.5,
     height: Dimens.widthScreen / 2.5,
     borderRadius: 15,
 
   },
   imageMarketing: {
-    width: Dimens.widthScreen / 1.2,
-    height: Dimens.widthScreen / 2.5,
+    width: Dimens.widthScreen / 1.5,
+    height: Dimens.widthScreen / 2.7,
     borderRadius: 15,
 
   },

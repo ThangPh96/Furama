@@ -6,6 +6,7 @@ import {NAVIGATION_CONSTANTS} from "../common/Constants";
 import FoodContainer from "../containers/FoodContainer";
 import ToppingContainer from "../containers/ToppingContainer";
 import {useSelector} from "react-redux";
+import FoodDetail from "../containers/FoodDetail";
 
 const Stack = createStackNavigator();
 export default function Route() {
@@ -40,7 +41,7 @@ export default function Route() {
           headerShown: false,
         }}
       />
-      </>
+    </>
   }
   const WelcomeScreens = () => {
     return <>
@@ -68,6 +69,13 @@ export default function Route() {
       <Stack.Screen
         name={NAVIGATION_CONSTANTS.CART}
         component={ToppingContainer}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={NAVIGATION_CONSTANTS.FOOD}
+        component={FoodDetail}
         options={{
           headerShown: false,
         }}

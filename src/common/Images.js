@@ -54,9 +54,7 @@ import ic_star_filled from "../assets/images/ic_star_filled/ic_star_filled.png";
 import im_rate from "../assets/images/im_rate/rate.png";
 import im_cart from "../assets/images/im_cart/im_cart.png";
 import im_6 from "../assets/images/image.png";
-import im_note from "../assets/images/writing.png";
-
-
+import im_note from "../assets/images/im_note/note.png";
 
 const Images = {
   ic_star_filled,
@@ -115,7 +113,7 @@ const Images = {
   im_background_success,
   im_rate,
   im_6,
-  im_note
+  im_note,
 }
 
 export default Images;

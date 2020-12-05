@@ -1,6 +1,8 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Environment from "../common/Environment";
+import {showAppLoading} from "../redux/actions/Actions";
+import store from "../redux/stores/Store";
 
 FETCH.propTypes = {
   method: PropTypes.string,
@@ -11,10 +13,12 @@ FETCH.propTypes = {
   data: PropTypes.object,
   timeout: PropTypes.number,
   onSuccess: PropTypes.func,
-  onError: PropTypes.func
+  onError: PropTypes.func,
+  showLoading: PropTypes.bool
 };
 FETCH.defaultProps = {
   timeout: 30 * 1000,
+  showLoading: true
 };
 
 function FETCH(props) {
@@ -28,6 +32,7 @@ function FETCH(props) {
     timeout,
     onSuccess,
     onError,
+    showLoading = true
   } = props;
 
   const config = {
@@ -46,10 +51,13 @@ function FETCH(props) {
     ...headers,
   }
 
+  showLoading && store.dispatch(showAppLoading(true))
   axios(config).then((res) => {
     onSuccess && onSuccess(res)
+    showLoading && store.dispatch(showAppLoading(false))
   }).catch((err) => {
     onError && onError(err)
+    showLoading && store.dispatch(showAppLoading(false))
   })
 }
 

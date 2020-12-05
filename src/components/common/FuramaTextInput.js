@@ -26,7 +26,7 @@ const FuramaTextInput = forwardRef((props, ref) => {
     <TextInput
       {...props}
       ref={inputRef}
-      placeholderTextColor={'#AAAAAA'}
+      placeholderTextColor={'Ghichú'}
       style={[styles.container, style]}
       onChangeText={(text) => {
         setText(text);

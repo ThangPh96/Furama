@@ -1,24 +1,20 @@
 import React from 'react';
 import {StyleSheet} from 'react-native'
-import FuramaView from "./FuramaView";
-import FuramaText from "./FuramaText";
+import FuramaView from "../common/FuramaView";
+import FuramaText from "../common/FuramaText";
 import Dimens from "../../common/Dimens";
 import FontSizes from "../../common/FontSizes";
-import FuramaImage from "./FuramaImage";
+import FuramaImage from "../common/FuramaImage";
 import Images from "../../common/Images";
-import FuramaTouchableOpacity from "./FuramaTouchableOpacity";
-import {NAVIGATION_CONSTANTS} from "../../common/Constants";
+import FuramaTouchableOpacity from "../common/FuramaTouchableOpacity";
+
 
 const DetailHeader = (props) => {
-  const {headerData} = props;
-  const {navigation, title, onShowCart} = headerData || {};
-  const onPress = () => {
-    navigation?.goBack()
-  }
+  const {navigation, headerData} = props
   return (
     <FuramaView
       style={{
-        height: Dimens.scale(64),
+        height: Dimens.verticalScale(64),
         flexDirection: "row",
         justifyContent: "center",
       }}
@@ -31,7 +27,9 @@ const DetailHeader = (props) => {
           left: 10,
           top: 10,
         }}
-        onPress={onPress}
+        onPress={() => {
+          navigation.goBack()
+        }}
       >
         <FuramaImage
           localSource={Images.im_back}
@@ -40,28 +38,21 @@ const DetailHeader = (props) => {
           }}
         />
       </FuramaTouchableOpacity>
-      <FuramaView>
         <FuramaText
-          text={title}
+          text={headerData.title}
           style={[
             {fontSize: FontSizes.size45, fontWeight: "bold"},
             styles.txtView,
           ]}
         />
-      </FuramaView>
       <FuramaView style={styles.imView}>
-        {onShowCart ?
-          <FuramaTouchableOpacity
-            onPress={navigation.navigate(NAVIGATION_CONSTANTS.CART)}>
-            <FuramaImage
-              localSource={Images.im_cart}
-              style={{
-                width: Dimens.widthScreen / 15,
-                height: Dimens.widthScreen / 15,
-              }}
-            />
-          </FuramaTouchableOpacity> : <></>
-        }
+        <FuramaImage
+          localSource={headerData.rightIcon}
+          style={{
+            width: Dimens.widthScreen / 15,
+            height: Dimens.widthScreen / 15,
+          }}
+        />
       </FuramaView>
     </FuramaView>
   );
