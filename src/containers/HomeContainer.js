@@ -4,6 +4,7 @@ import TypeServiceList from "../components/home/TypeServiceList";
 import TypeNewsList from "../components/home/TypeNewsList";
 import Dimens from "../common/Dimens";
 import { HEADER_MODE, NAVIGATION_CONSTANTS } from "../common/Constants";
+import { ScrollView} from 'react-native';
 
 
 const HomeContainer = (props) => {
@@ -19,7 +20,7 @@ const HomeContainer = (props) => {
       }}
       renderContentView={() => {
         return (
-          <>
+          <ScrollView>
             <TypeServiceList
               style={{
                 marginBottom: Dimens.verticalScale(20),
@@ -28,7 +29,7 @@ const HomeContainer = (props) => {
               navigation={navigation}
             />
             <TypeNewsList/>
-          </>
+          </ScrollView>
         );
       }}
     />

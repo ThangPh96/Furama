@@ -22,7 +22,7 @@ const HomeHeader = (props) => {
           numberOfLines={2}
           style={[
             {
-              fontSize: FontSizes.size35,
+              fontSize: FontSizes.size40,
               fontWeight: "bold",
               width: Dimens.widthScreen - Dimens.scale(30 * 2 + 8 * 4),
               marginBottom: Dimens.verticalScale(4),
@@ -32,22 +32,22 @@ const HomeHeader = (props) => {
         />
         <FuramaText
           text={"Chúc bạn có một kì nghỉ tuyệt vời"}
-          style={[styles.txtView]}
+          style={[styles.txtView, {fontSize: FontSizes.size28}]}
         />
       </FuramaView>
       <FuramaView style={styles.imView}>
         <FuramaImage
           localSource={Images.im_time_picker}
           style={{
-            width: Dimens.verticalScale(20),
-            height: Dimens.verticalScale(20),
+            width: Dimens.verticalScale(30),
+            height: Dimens.verticalScale(30),
           }}
         />
         <FuramaImage
           localSource={Images.im_notification}
           style={{
-            width: Dimens.verticalScale(20),
-            height: Dimens.verticalScale(20),
+            width: Dimens.verticalScale(30),
+            height: Dimens.verticalScale(30),
             marginHorizontal: Dimens.scale(8),
           }}
         />
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-end",
-    margin: 5,
+    margin: Dimens.scale(5),
     flexDirection: "row",
   },
 });

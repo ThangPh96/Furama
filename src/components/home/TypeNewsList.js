@@ -86,25 +86,25 @@ const styles = StyleSheet.create({
 
   },
   container: {
-    marginBottom: 50,
-    marginHorizontal: 10,
+    marginBottom: Dimens.scale(50),
+    marginHorizontal: Dimens.scale(10),
     width: Dimens.widthScreen / 1.5,
     height: Dimens.widthScreen / 2.5,
-    borderRadius: 15,
+    borderRadius: Dimens.scale(15),
 
   },
   imageMarketing: {
     width: Dimens.widthScreen / 1.5,
     height: Dimens.widthScreen / 2.7,
-    borderRadius: 15,
+    borderRadius: Dimens.scale(15),
 
   },
   txtTitle: {
     width: Dimens.widthScreen,
     height: Dimens.widthScreen / 10,
-    borderRadius: 15,
+    borderRadius: Dimens.scale(10),
     fontWeight: 'bold',
-    fontSize: FontSizes.size40,
+    fontSize: FontSizes.size30,
     paddingLeft: Dimens.widthScreen / 16,
   },
 })

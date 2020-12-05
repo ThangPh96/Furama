@@ -7,32 +7,15 @@ import FuramaText from "../common/FuramaText";
 const data = [
     {
         id: 1,
-        name: 'Appetizers'
-    },
+        name: "Furama Restaurant-Don Cipriani's food 9"
     {
         id: 2,
-        name: 'Soup'
+        name: "Furama Restaurant-Don Cipriani's food 9"
     },
     {
         id: 3,
-        name: 'House Specialties'
-    },
-    {
-        id: 4,
-        name: 'Fried Rice'
-    },
-    {
-        id: 5,
-        name: 'Sea Food'
-    },
-    {
-        id: 6,
-        name: 'Beer'
-    },
-    {
-        id: 7,
-        name: 'Vegetable'
-    },
+        name: "Furama Restaurant-Don Cipriani's food 9"
+    },  
 ]
 
 

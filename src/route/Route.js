@@ -5,6 +5,8 @@ import HomeContainer from "../containers/HomeContainer";
 import {NAVIGATION_CONSTANTS} from "../common/Constants";
 import FoodContainer from "../containers/FoodContainer";
 import FoodDetail from "../containers/FoodDetail";
+import OrderContainer from "../containers/OrderContainer";
+
 
 const Stack = createStackNavigator();
 export default function Route() {
@@ -28,6 +30,13 @@ export default function Route() {
         <Stack.Screen
           name={NAVIGATION_CONSTANTS.FOOD}
           component={FoodDetail}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name={NAVIGATION_CONSTANTS.ORDER}
+          component={OrderContainer}
           options={{
             headerShown: false,
           }}

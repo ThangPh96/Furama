@@ -7,6 +7,7 @@ import FontSizes from "../../common/FontSizes";
 import FuramaImage from "../common/FuramaImage";
 import Images from "../../common/Images";
 import FuramaTouchableOpacity from "../common/FuramaTouchableOpacity";
+import { NAVIGATION_CONSTANTS } from '../../common/Constants';
 
 
 const DetailHeader = (props) => {
@@ -24,8 +25,8 @@ const DetailHeader = (props) => {
           width: Dimens.scale(30),
           height: Dimens.scale(30),
           position: "absolute",
-          left: 10,
-          top: 10,
+          left: Dimens.scale(10),
+          top: Dimens.scale(10),
         }}
         onPress={() => {
           navigation.goBack()
@@ -40,12 +41,18 @@ const DetailHeader = (props) => {
       </FuramaTouchableOpacity>
         <FuramaText
           text={headerData.title}
-          style={[
-            {fontSize: FontSizes.size45, fontWeight: "bold"},
+          style={[{
+              fontSize: FontSizes.size36, 
+              fontWeight: "bold",
+              width: Dimens.widthScreen * 0.75,                      
+                },
             styles.txtView,
           ]}
         />
-      <FuramaView style={styles.imView}>
+      <FuramaTouchableOpacity 
+            style={styles.imView}
+            onPress={() => navigation.navigate(NAVIGATION_CONSTANTS.ORDER)}
+            >
         <FuramaImage
           localSource={headerData.rightIcon}
           style={{
@@ -53,19 +60,19 @@ const DetailHeader = (props) => {
             height: Dimens.widthScreen / 15,
           }}
         />
-      </FuramaView>
+      </FuramaTouchableOpacity>
     </FuramaView>
   );
 };
 const styles = StyleSheet.create({
   txtView: {
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: Dimens.scale(10),
   },
   imView: {
     position: 'absolute',
-    right: 10,
-    top: 15,
+    right: Dimens.scale(10),
+    top: Dimens.scale(15),
   }
 })
 

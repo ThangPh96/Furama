@@ -43,15 +43,19 @@ const TypeServiceList = (props) => {
             style={styles.itemType}
             onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.DETAIL)}
           >
-            <View>
               <FuramaImage
                 style={styles.imView}
                 uri={item.thumbnail}
               />
-              <Text style={{margin: 5, fontWeight: 'bold', textAlign: 'center', fontSize: FontSizes.size20,}}>
+              <Text 
+                style={{
+                   marginHorizontal: Dimens.scale(5), 
+                   fontWeight: 'bold', 
+                   textAlign: 'center', 
+                   fontSize: FontSizes.size18,
+                   }}>
                 {item.service_name}
               </Text>
-            </View>
           </FuramaTouchableOpacity>
         }
       />
@@ -62,16 +66,16 @@ const TypeServiceList = (props) => {
 const styles = StyleSheet.create({
   itemType: {
     backgroundColor: 'white',
-    margin: 10,
-    borderRadius: 20,
-    width: Dimens.scale(80),
-    height: Dimens.scale(80),
+    margin: Dimens.scale(5),
+    borderRadius: Dimens.scale(15),
+    width: Dimens.scale(90),
+    height: Dimens.scale(90),
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: Dimens.scale(2),
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,

@@ -9,10 +9,10 @@ import Dimens from "../common/Dimens";
 import FuramaImage from "../components/common/FuramaImage";
 import Images from "../common/Images";
 import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity";
+import FontSizes from "../common/FontSizes";
 
 const FoodContainer = (props) => {
   const { navigation } = props;
-
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -34,25 +34,18 @@ const FoodContainer = (props) => {
         style={{
           marginHorizontal: Dimens.scale(8),
           marginVertical: Dimens.verticalScale(8),
-          borderRadius: Dimens.scale(8),
         }}
         onPress={() => navigation?.navigate(NAVIGATION_CONSTANTS.FOOD, {
           duc: item
         })}
 
-      >
-        <FuramaText
-          style={{
-            margin: Dimens.scale(10),
-          }}
-          text={item.item_name}
-        />
+      >        
         <FuramaImage
           // uri={item.thumbnail}
           localSource={Images.im_welcome}
           style={{
             width: Dimens.scale(200),
-            height: Dimens.scale(100),
+            height: Dimens.scale(200) * 218/387,
             borderRadius: Dimens.scale(8),
           }}
         />
@@ -62,10 +55,17 @@ const FoodContainer = (props) => {
             textShadowColor: "black",
             textShadowOffset: { width: -1, height: 1 },
             textShadowRadius: 20,
-            position: 'absolute',
-            bottom: Dimens.scale(8)
           }}
-          text={item.price_list.list_price}
+          text={[item.price_list.list_price, ' đ']}
+        />
+        <FuramaText
+          style={{
+            alignSelf: "center",
+            textAlign: 'center',
+            width: Dimens.scale(200) * 284/387,
+            opacity: 0.7
+          }}
+          text={item.item_name}
         />
       </FuramaTouchableOpacity>
     );
@@ -112,7 +112,14 @@ const FoodContainer = (props) => {
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
               <>
-                <FuramaText style={{ margin: 10 }} text={item.category_name} />
+                <FuramaText 
+                    style={{ 
+                      margin: Dimens.scale(10),
+                      fontWeight: 'bold',
+                      fontSize: FontSizes.size28,
+                      }} 
+                      text={item.category_name} 
+                />
                 <FuramaFlatList
                   horizontal={true}
                   renderItem={renderItem}

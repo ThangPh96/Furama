@@ -11,6 +11,7 @@ import Images from "../common/Images";
 import FuramaTouchableOpacity from "../components/common/FuramaTouchableOpacity";
 // import FuramaTextInput from "../components/common/FuramaTextInput";
 import {TextInput} from "react-native";
+import FontSizes from "../common/FontSizes";
 
 const FoodDetail = (props) => {
   const {navigation, route} = props;
@@ -33,9 +34,7 @@ const FoodDetail = (props) => {
       <FuramaTouchableOpacity
         style={{
           width: Dimens.scale(80),
-          height: Dimens.scale(100),
-          marginHorizontal: Dimens.scale(8),
-          marginVertical: Dimens.scale(8),
+          margin: Dimens.scale(8),
         }}
       >
         <FuramaImage
@@ -53,19 +52,20 @@ const FoodDetail = (props) => {
           style={{
             color: "#363636",
             alignSelf: "center",
+            fontSize: FontSizes.size20
           }}
           // text={item.item_name}
-          text={"ss"}
+          text={"Sốt cà chua"}
         />
         <FuramaText
           style={{
             color: "#056055",
             alignSelf: "center",
             textShadowColor: "black",
-            textShadowRadius: 100,
+            fontSize: FontSizes.size18
           }}
           // text={item.price_list.list_price}
-          text={"90.000 vnđ"}
+          text={"90.000 đ"}
         />
       </FuramaTouchableOpacity>
     );
@@ -91,9 +91,25 @@ const FoodDetail = (props) => {
     );
   };
 
+  const ViewFooter = () => {
+    return (
+      <FuramaView
+        style={{
+          height: Dimens.scale(170),
+        }}
+      />
+    );
+  };
+
   const OrderView = () => {
     return (
-      <>
+      <FuramaView
+        style={{
+          position: "absolute",
+          bottom: 0,
+          backgroundColor: 'white'
+        }}
+      >
         <FuramaView
           style={{
             width: Dimens.widthScreen - Dimens.scale(30),
@@ -121,8 +137,6 @@ const FoodDetail = (props) => {
         </FuramaView>
         <FuramaView
           style={{
-            position: "absolute",
-            bottom: 0,
             height: Dimens.scale(100),
             borderTopWidth: 1,
             borderTopColor: "#E1E1E1",
@@ -136,7 +150,6 @@ const FoodDetail = (props) => {
             style={{
               flex: 1,
               backgroundColor: 'blue',
-
             }}
           >
             <FuramaText
@@ -157,7 +170,7 @@ const FoodDetail = (props) => {
           >
           </FuramaTouchableOpacity>
         </FuramaView>
-      </>
+      </FuramaView>
     )
   }
 
@@ -173,7 +186,7 @@ const FoodDetail = (props) => {
         return (
           <FuramaView
             style={{
-              backgroundColor: "white",
+              backgroundColor: 'white',
               flex: 1,
             }}
           >
@@ -184,7 +197,8 @@ const FoodDetail = (props) => {
                 <>
                   <FuramaText
                     style={{
-                      margin: Dimens.scale(5),
+                      marginLeft: Dimens.scale(5),
+                      fontWeight: 'bold',
                       color: "black",
                     }}
                     text={item.category_name}
@@ -197,6 +211,7 @@ const FoodDetail = (props) => {
                 </>
               )}
               ListHeaderComponent={ImageHeader()}
+              ListFooterComponent={ViewFooter()}
             />
             <OrderView/>
           </FuramaView>
