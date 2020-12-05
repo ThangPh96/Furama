@@ -41,7 +41,13 @@ function CartContainer() {
         },
     ]
     const [result, setResult] = useState(0)
-
+    const onPressPlus=()=>{
+        setResult(result+1)
+    }
+    const onPressSubtract=()=>{
+        if (result!==0)
+        setResult(result-1)
+    }
     const renderItem = ({item}) => {
         return (
             <FuramaView flexDirection={'row'} style={styles.container}>
@@ -67,13 +73,15 @@ function CartContainer() {
                             <ButtonAmount
                                 text={'+'}
                                 style={styles.btnAmount}
+                                onPress={onPressPlus}
                             />
                             <FuramaText
                                 style={{fontSize: FontSizes.size35, marginHorizontal: Dimens.scale(5)}}
-                                text={0}/>
+                                text={result}/>
                             <ButtonAmount
                                 text={'-'}
                                 style={styles.btnAmount}
+                                onPress={onPressSubtract}
                             />
                         </FuramaView>
                         <FuramaText
@@ -142,7 +150,7 @@ const styles = StyleSheet.create({
     },
     container: {
         marginHorizontal: Dimens.scale(5),
-        marginVertical: Dimens.scale(20)
+        marginVertical: Dimens.scale(10)
     },
     image: {
         height: Dimens.scale(80),
